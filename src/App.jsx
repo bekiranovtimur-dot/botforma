@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { initTWA } from '@twa-dev/sdk';
+import { init } from '@twa-dev/sdk';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -17,7 +17,7 @@ function App() {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    initTWA();
+    init(); // ✅ Обновлено
   }, []);
 
   const validate = () => {
@@ -40,7 +40,7 @@ function App() {
     setSubmitting(true);
 
     try {
-      // Отправляем данные на ваш сервер (замените URL)
+      // Замените на ваш бэкенд
       const response = await fetch('https://your-backend.com/api/form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -94,7 +94,7 @@ function App() {
         <h1 style={{ fontSize: '28px', marginTop: '10px' }}>Поздравляю!</h1>
         <p style={{ fontSize: '16px', marginBottom: '20px' }}>Запись готова — переходи в канал по кнопке ниже</p>
         <a
-          href="https://t.me/your_channel_link" // Замените на реальную ссылку
+          href="https://t.me/your_channel_link"
           target="_blank"
           rel="noopener noreferrer"
           style={{
