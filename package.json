@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@twa-dev/sdk": "^2.0.0",
+    "@twa-dev/sdk": "^6.0.0",  // ✅ Правильная версия
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
