@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
-import { init } from '@twa-dev/sdk';
+// import { init } from '@twa-dev/sdk'; // ❌ Убираем, если не нужно
 
 function App() {
+  // useEffect(() => {
+  //   init(); // ❌ Убираем, если вызывает ошибку
+  // }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     tg: '',
@@ -15,10 +19,6 @@ function App() {
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
-
-  useEffect(() => {
-    init(); // ✅ Обновлено
-  }, []);
 
   const validate = () => {
     const newErrors = {};
